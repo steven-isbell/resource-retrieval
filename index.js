@@ -25,13 +25,11 @@ const pullResource = async (val, page) => {
         for (let j = 0; j < resourceNodes.length; j++) {
           resources.push({
             title: resourceNodes[j]
-              ? await (await resourceNodes[j].getProperty(
+              && await (await resourceNodes[j].getProperty(
                   "innerText"
-                )).jsonValue()
-              : null,
+                )).jsonValue(),
             url: resourceNodes[j]
-              ? await (await resourceNodes[j].getProperty("href")).jsonValue()
-              : null
+              && await (await resourceNodes[j].getProperty("href")).jsonValue()
           });
         }
         const data = {
