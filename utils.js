@@ -1,4 +1,4 @@
-const promiseRetry = require("promise-retry");
+const promiseRetry = require('promise-retry');
 const timeout = 1000;
 const iv = 100;
 
@@ -11,7 +11,7 @@ module.exports = (page, maxTimeout = 120000) =>
             checkReadyState();
 
             function checkReadyState() {
-              if (document.readyState === "complete") {
+              if (document.readyState === 'complete') {
                 resolve();
               } else {
                 setTimeout(checkReadyState, iv);
@@ -21,9 +21,9 @@ module.exports = (page, maxTimeout = 120000) =>
         }, iv);
       } catch (err) {
         if (
-          err.message.indexOf(
-            "Cannot find context with specified id undefined"
-          ) !== -1
+          err.message.includes(
+            'Cannot find context with specified id undefined'
+          )
         ) {
           retry();
         } else {
