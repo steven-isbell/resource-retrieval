@@ -1,14 +1,16 @@
 import promiseRetry from 'promise-retry';
 
+import Page from './PageInterface';
+
 const timeout = 1000;
 const iv = 100;
 
-export default (page: Object, maxTimeout = 120000) =>
+export default (page: Page, maxTimeout = 120000) =>
   promiseRetry(
-    async (retry, number) => {
+    async retry => {
       try {
-        await page.evaluate(iv => {
-          return new Promise((resolve, reject) => {
+        await page.evaluate((iv: number) => {
+          return new Promise(resolve => {
             checkReadyState();
 
             function checkReadyState() {
@@ -26,7 +28,7 @@ export default (page: Object, maxTimeout = 120000) =>
             'Cannot find context with specified id undefined'
           )
         ) {
-          retry();
+          retry(err);
         } else {
           throw err;
         }

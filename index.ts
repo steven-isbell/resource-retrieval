@@ -2,12 +2,7 @@ import puppeteer from 'puppeteer';
 import fs from 'fs';
 
 import sleep from './utils';
-
-interface Page {
-  goto: Function;
-  $: Function;
-  $$: Function;
-}
+import Page from './PageInterface';
 
 const writeToFile = (data: Object) => {
   fs.writeFile('./resources.json', JSON.stringify(data), err => {
@@ -16,7 +11,7 @@ const writeToFile = (data: Object) => {
   });
 };
 
-const pullResource = async (val: String, page: Page) => {
+const pullResource = async (val: string, page: Page) => {
   return new Promise(async (resolve, reject) => {
     try {
       await page.goto(val);
