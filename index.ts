@@ -3,6 +3,12 @@ import fs from 'fs';
 
 import sleep from './utils';
 
+interface Page {
+  goto: Function;
+  $: Function;
+  $$: Function;
+}
+
 const writeToFile = (data: Object) => {
   fs.writeFile('./resources.json', JSON.stringify(data), err => {
     if (err) return console.error(err);
@@ -10,7 +16,7 @@ const writeToFile = (data: Object) => {
   });
 };
 
-const pullResource = async (val, page) => {
+const pullResource = async (val: String, page: Page) => {
   return new Promise(async (resolve, reject) => {
     try {
       await page.goto(val);
@@ -44,6 +50,7 @@ const pullResource = async (val, page) => {
       }
     } catch (err) {
       console.log(err);
+      reject(err);
     }
   });
 };
