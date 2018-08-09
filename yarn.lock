@@ -2,6 +2,31 @@
 # yarn lockfile v1
 
 
+"@types/events@*":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
+
+"@types/node@*":
+  version "10.5.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
+
+"@types/promise-retry@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@types/promise-retry/-/promise-retry-1.1.2.tgz#2cfbf2048306a6579d2e193ee4874a84f204964a"
+  dependencies:
+    "@types/retry" "*"
+
+"@types/puppeteer@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.6.0.tgz#3dc6613cfbbb5e91443f5137fb4831973857ab7f"
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
+
+"@types/retry@*":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.10.2.tgz#bd1740c4ad51966609b058803ee6874577848b37"
+
 agent-base@^4.1.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.2.0.tgz#9838b5c3392b962bad031e6a4c5e1024abec45ce"
@@ -222,6 +247,10 @@ string_decoder@~1.1.1:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.0.1.tgz#43738f29585d3a87575520a4b93ab6026ef11fdb"
 
 ultron@~1.1.0:
   version "1.1.1"
