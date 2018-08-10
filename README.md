@@ -4,6 +4,13 @@ A scraper for pulling all available resources from https://www.github.com/steven
 It will print the resources to a JSON file in your file tree following a title, value structure where the title is the resource heading
 and the value is an array of resource objects with a title and link.
 
+### Instructions
+* Fork and clone
+* Install Dependencies
+* Compile with TypeScript
+  * run `tsc` in root of project directory
+* run `node lib/index.js`
+
 ```json
 {
     "title": "REACT Resources",
