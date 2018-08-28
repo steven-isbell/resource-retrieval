@@ -4,14 +4,14 @@ import fs from 'fs';
 import sleep from './utils';
 import Page from './PageInterface';
 
-const writeToFile = (data: Object) => {
+const writeToFile = (data: Object): void => {
   fs.writeFile('./resources.json', JSON.stringify(data), err => {
     if (err) return console.error(err);
     process.exit();
   });
 };
 
-const pullResource = async (val: string, page: Page) => {
+const pullResource = async (val: string, page: Page): Promise<object> => {
   return new Promise(async (resolve, reject) => {
     try {
       await page.goto(val);

@@ -5,7 +5,7 @@ import Page from './PageInterface';
 const timeout = 1000;
 const iv = 100;
 
-export default (page: Page, maxTimeout = 120000) =>
+export default (page: Page, maxTimeout: number = 120000): Object =>
   promiseRetry(
     async retry => {
       try {
